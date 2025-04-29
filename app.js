@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- CONFIGURATION FOR GOOGLE SHEETS ---
     // IMPORTANT: Replace this placeholder with the actual URL of your deployed Google Apps Script.
-    const GOOGLE_APPS_SCRIPT_URL = "YOUR_DEPLOYED_APPS_SCRIPT_URL_HERE"; 
+    const GOOGLE_APPS_SCRIPT_URL = https://script.google.com/macros/s/AKfycbzkvV5g-0fNxu818FaBl7F3Tw5J_QX14WhAFruUX5ect7IfqBbJ3bvxiyxfVMenVCq8_A/exec; 
     // Set to null or empty string "" to disable Google Sheets logging
     // const GOOGLE_APPS_SCRIPT_URL = null;
 
