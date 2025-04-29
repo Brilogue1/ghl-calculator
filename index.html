@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeshare Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calculator-app">
+        <!-- Form Section -->
+        <div id="form-section">
+            <h1>Timeshare Cost Calculator</h1>
+            <form id="calculator-form">
+                <h2>Owner Information</h2>
+                <div class="form-group">
+                    <label for="owner1Name">Owner 1 Full Name:</label>
+                    <input type="text" id="owner1Name" name="owner1Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="owner2Name">Owner 2 Full Name (Optional):</label>
+                    <input type="text" id="owner2Name" name="owner2Name">
+                </div>
+
+                <h2>Resort Information</h2>
+                <div class="form-group">
+                    <label for="resort1Name">Resort 1 Name:</label>
+                    <input type="text" id="resort1Name" name="resort1Name" required>
+                </div>
+                 <div class="form-group">
+                    <label for="resort2Name">Resort 2 Name (Optional):</label>
+                    <input type="text" id="resort2Name" name="resort2Name">
+                </div>
+                <div class="form-group">
+                    <label for="maintenanceFee">Total Annual Maintenance/Taxes Fee:</label>
+                    <input type="number" id="maintenanceFee" name="maintenanceFee" step="0.01" required>
+                </div>
+
+                <button type="submit">Calculate</button>
+            </form>
+        </div>
+
+        <!-- Results Section (Initially Hidden) -->
+        <div id="results-section" style="display: none;">
+            <button id="start-over">Start Over</button>
+            
+            <!-- Page 1: Overall Projection -->
+            <div id="page1Content" class="result-page">
+                <h2>Overall 30-Year Projection</h2>
+                <p><strong>Owner(s):</strong> <span id="ownerName"></span></p>
+                <p><strong>Total Initial Annual Fee:</strong> <span id="totalInitialFee"></span></p>
+                <h3>Maintenance Fee Projection (at 9.2% Inflation)</h3>
+                <table id="projectionTable">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Annual Cost</th>
+                            <th>Cumulative Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projectionTableBody">
+                        <!-- Rows will be added by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Page 2: Resort 1 Comparison -->
+            <div id="page2Content" class="result-page">
+                <h2>Resort 1 Cost Comparison</h2>
+                 <p><strong>Owner(s):</strong> <span id="page2OwnerName"></span></p>
+                 <p><strong>Resort Name:</strong> <span id="page2ResortName"></span></p>
+                 <p><strong>Initial Annual Fee:</strong> <span id="page2ResortFee"></span></p>
+                 <p><strong>Assumed Inflation Rate:</strong> <span id="page2InflationRate"></span></p>
+
+                 <div class="options-container">
+                    <div class="option-box">
+                        <h3>Option 1: Keep Current Contract</h3>
+                        <p>Initial Annual Fee: <span id="page2Option1AnnualFee"></span></p>
+                        <p><strong>Projected 30-Year Cumulative Cost:</strong> <span id="page2Option1TotalCost"></span></p>
+                    </div>
+                    <div class="option-box">
+                        <h3>Option 2: Recommended Liquidation</h3>
+                        <p>Liquidation Cost: <span id="page2Option2LiquidationCost"></span></p>
+                        <p>Transfer Fees: <span id="page2Option2TransferFees"></span></p>
+                        <p>Processing Fee: <span id="page2Option2ProcessingFee"></span></p>
+                        <p>Gross Liquidation Price: <span id="page2Option2GrossLiquidation"></span></p>
+                        <p>Mortgage Relief Amount (MRA): <span id="page2Option2MRA"></span></p>
+                        <p><strong>Net Termination Cost/Savings:</strong> <span id="page2Option2NetTermination"></span></p>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- Page 3: Resort 2 Comparison (Conditional Display) -->
+            <div id="page3Content" class="result-page" style="display: none;">
+                 <h2>Resort 2 Cost Comparison</h2>
+                 <p><strong>Owner(s):</strong> <span id="page3OwnerName"></span></p>
+                 <p><strong>Resort Name:</strong> <span id="page3ResortName"></span></p>
+                 <p><strong>Initial Annual Fee:</strong> <span id="page3ResortFee"></span></p>
+                 <p><strong>Assumed Inflation Rate:</strong> <span id="page3InflationRate"></span></p>
+
+                 <div class="options-container">
+                    <div class="option-box">
+                        <h3>Option 1: Keep Current Contract</h3>
+                        <p>Initial Annual Fee: <span id="page3Option1AnnualFee"></span></p>
+                        <p><strong>Projected 30-Year Cumulative Cost:</strong> <span id="page3Option1TotalCost"></span></p>
+                    </div>
+                    <div class="option-box">
+                        <h3>Option 2: Recommended Liquidation</h3>
+                        <p>Liquidation Cost: <span id="page3Option2LiquidationCost"></span></p>
+                        <p>Transfer Fees: <span id="page3Option2TransferFees"></span></p>
+                        <p>Processing Fee: <span id="page3Option2ProcessingFee"></span></p>
+                        <p>Gross Liquidation Price: <span id="page3Option2GrossLiquidation"></span></p>
+                        <p>Mortgage Relief Amount (MRA): <span id="page3Option2MRA"></span></p>
+                        <p><strong>Net Termination Cost/Savings:</strong> <span id="page3Option2NetTermination"></span></p>
+                    </div>
+                 </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
